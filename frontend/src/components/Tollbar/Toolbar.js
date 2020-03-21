@@ -14,14 +14,13 @@ const Toolbar = () => {
 
     return (
         <Navbar color="light" light expand="md">
-            <NavbarBrand tag={RouterNavLink} to="/">FORUM</NavbarBrand>
+            <NavbarBrand tag={RouterNavLink} to="/">LALAFO</NavbarBrand>
+            <NavLink tag={RouterNavLink} to="/">All</NavLink>
 
             <Nav className="ml-auto" navbar>
-                <NavItem>
-                    <NavLink tag={RouterNavLink} to="/" exact>Posts</NavLink>
-                </NavItem>
                 {user ? (
                     <UserMenu user={user} logout={() => dispatch(logoutUser())} />
+
                 ) : (
                     <AnonymousMenu/>
                 )}
