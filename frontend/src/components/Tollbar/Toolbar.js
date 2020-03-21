@@ -1,6 +1,6 @@
 import React from 'react';
 import {NavLink as RouterNavLink} from 'react-router-dom';
-import {Nav, Navbar, NavbarBrand, NavItem, NavLink} from 'reactstrap';
+import {Nav, Navbar, NavbarBrand, NavLink} from 'reactstrap';
 import {useDispatch, useSelector} from "react-redux";
 
 

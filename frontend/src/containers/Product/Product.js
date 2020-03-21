@@ -12,7 +12,6 @@ class Product extends Component {
     }
 
     render() {
-        console.log(this.props.product);
         return (
             <>
                 <img src={`http://localhost:8000/uploads/${this.props.product.image}`} alt="no image" style={{width:'300px',height:'300px'}}/>

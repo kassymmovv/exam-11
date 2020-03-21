@@ -7,7 +7,7 @@ const ProductListItem = props => {
     return (
         <Card >
             <CardBody>
-                <img src={`http://localhost:8000/uploads/${props.image}`} alt=""/>
+                <img src={`http://localhost:8000/uploads/${props.image}`} alt="no image" style={{width:'150px',height:'100px'}}/>
                 <Link to={"/products/" + props.id}>
                     {props.title}
                 </Link>
