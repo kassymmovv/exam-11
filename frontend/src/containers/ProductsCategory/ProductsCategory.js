@@ -21,7 +21,7 @@ class ProductsCategory extends Component {
             <>
 
                 {this.props.productCat.map(product => (
-                    <a href="#" onClick={() => console.log(this.props.history.push(`/product/${product._id}`))} key={product._id}>
+                    <a href="" onClick={() => console.log(this.props.history.push(`/product/${product._id}`))} key={product._id}>
                         <ProductListItem
                             key={product._id}
                             title={product.title}

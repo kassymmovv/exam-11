@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import {connect} from "react-redux";
 import {deleteProduct, fetchProduct} from "../../store/actions/productsActions";
+import {Button} from 'reactstrap';
 
 class Product extends Component {
     componentDidMount() {
@@ -12,15 +13,22 @@ class Product extends Component {
     }
 
     render() {
+
+        let deleteProduct = '';
+        if (this.props.user) {
+            if (this.props.product.user === this.props.user._id) {
+                deleteProduct = <Button onClick={() => this.props.deleteProduct(this.props.match.params.id)}>Delete</Button>
+            }
+        }
         return (
             <>
-                <img src={`http://localhost:8000/uploads/${this.props.product.image}`} alt="no image" style={{width:'300px',height:'300px'}}/>
+                <img src={`http://localhost:8000/uploads/${this.props.product.image}`} alt="" style={{width:'300px',height:'300px'}}/>
                 <h1>title:{this.props.product.title}</h1>
                 <h2>description:{this.props.product.description}</h2>
-                {/*<h2>sailor:{this.props.product.user}</h2>*/}
+                <h2>sailor:{this.props.user.username}</h2>
                 <h3>{this.props.product.price}</h3>
-                <button onClick={() => this.props.deleteProduct(this.props.product._id)}>delete product</button>
                 <p>{this.props.delete}</p>
+                {deleteProduct}
             </>
         );
     }

@@ -7,7 +7,7 @@ const ProductListItem = props => {
     return (
         <Card >
             <CardBody>
-                <img src={`http://localhost:8000/uploads/${props.image}`} alt="no image" style={{width:'150px',height:'100px'}}/>
+                <img src={`http://localhost:8000/uploads/${props.image}`} alt="" style={{width:'150px',height:'100px'}}/>
                 <Link to={"/products/" + props.id}>
                     {props.title}
                 </Link>
@@ -23,7 +23,7 @@ ProductListItem.propTypes = {
     image: PropTypes.string,
     id: PropTypes.string.isRequired,
     title: PropTypes.string.isRequired,
-    price: PropTypes.number.isRequired
+    price: PropTypes.string.isRequired
 };
 
 export default ProductListItem;
